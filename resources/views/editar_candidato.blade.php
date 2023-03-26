@@ -7,13 +7,14 @@
     <title>Exemplo de CRUD</title>
 </head>
 <body>
-    <form action="/cadastrar-candidato" method="POST">
+    <form action="/atualizar-candidato/{{$candidato->id}}" method="POST">
     @csrf
+    @method("PUT")
     <label for="">Nome</label>
-    <input type="text" placeholder="Digite o seu nome.." name="nome_candidato">
+    <input type="text" placeholder="Digite o seu nome.." name="nome_candidato" value="{{$candidato->name}}">
     <br>
     <label for="">Telefone</label>
-    <input type="text" placeholder="Digite o seu telefone.." name="telefone_candidato">
+    <input type="text" placeholder="Digite o seu telefone.." name="telefone_candidato" value="{{$candidato->telefone}}">
     <br>
     <button type="submit">Enviar</button>
 </form>
